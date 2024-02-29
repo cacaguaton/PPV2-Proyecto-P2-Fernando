@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe89ec27f0cf4c429c9eef6ff49db65, type: 3}
+  m_Name: New Subject
+  m_EditorClassIdentifier: 
+  Lesson: 0
+  leccionList:
+  - ID: 0
+    lessons: "Es un contenedor de informaci\xF3n"
+    options:
+    - Clase
+    - Funcion
+    - Variable
+    - GameObject
+    - Prefab
+    correctAnswer: 2
+  - ID: 1
+    lessons: Es una porcion del codigo que realiza una accion
+    options:
+    - Clase
+    - Funcion
+    - GameObject
+    - Prefab
+    - Algoritmo
+    correctAnswer: 1
+  - ID: 1
+    lessons: Es una serie de pasos para resolver un problema
+    options:
+    - Programa
+    - Funcion
+    - GameObject
+    - Aplicacion
+    - Algoritmo
+    correctAnswer: 4
