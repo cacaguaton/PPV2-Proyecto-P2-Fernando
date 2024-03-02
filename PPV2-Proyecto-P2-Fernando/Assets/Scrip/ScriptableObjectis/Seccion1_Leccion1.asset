@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7fe89ec27f0cf4c429c9eef6ff49db65, type: 3}
-  m_Name: New Subject
+  m_Name: Seccion1_Leccion1
   m_EditorClassIdentifier: 
   Lesson: 0
   leccionList:
@@ -32,7 +32,7 @@ MonoBehaviour:
     - Prefab
     - Algoritmo
     correctAnswer: 1
-  - ID: 1
+  - ID: 2
     lessons: Es una serie de pasos para resolver un problema
     options:
     - Programa
@@ -41,3 +41,21 @@ MonoBehaviour:
     - Aplicacion
     - Algoritmo
     correctAnswer: 4
+  - ID: 3
+    lessons: Es una serie de algoritmos
+    options:
+    - Programa
+    - Funcion
+    - GameObject
+    - Aplicacion
+    - Algoritmo
+    correctAnswer: 0
+  - ID: 4
+    lessons: Que es un GameObject?
+    options:
+    - Programa
+    - Funcion
+    - GameObject
+    - Aplicacion
+    - Algoritmo
+    correctAnswer: 2
