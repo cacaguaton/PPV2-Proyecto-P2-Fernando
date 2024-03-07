@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4802232915865502987}
   - component: {fileID: 919142399739073681}
   - component: {fileID: 8041282062759296459}
-  - component: {fileID: 9125411683503385802}
+  - component: {fileID: -6113201114083971474}
   m_Layer: 5
   m_Name: Opt1
   m_TagString: Untagged
@@ -121,8 +121,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 919142399739073681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &9125411683503385802
+      m_Calls:
+      - m_Target: {fileID: 902750828588161705}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-6113201114083971474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OptionID: 0
-  OptionName: pepe
+  OptionName: 
 --- !u!1 &5641494719968940898
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.32, y: -0}
+  m_AnchoredPosition: {x: -0.32, y: 0}
   m_SizeDelta: {x: 199.36, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6211719089991158462
