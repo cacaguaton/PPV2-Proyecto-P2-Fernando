@@ -103,6 +103,7 @@ public void NextQuestion()
             {
                 AnswerContainer.GetComponent<Image>().color = Red;
                 Debug.Log("Respuesta Incorrecta.  " + question + ": " + correctAnswer);
+                lives--;
             }
 
             //Actualizamos el contador de vida
@@ -145,7 +146,7 @@ public void NextQuestion()
 
     public bool CheckPlayerState()
     {
-        if(answerFromPlayer != 0)
+        if(answerFromPlayer != 9)
         {
             CheckButton.GetComponent<Button>().interactable = true;
             CheckButton.GetComponent<Image>().color = Color.white;
