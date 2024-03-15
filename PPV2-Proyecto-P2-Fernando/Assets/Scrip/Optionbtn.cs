@@ -27,7 +27,9 @@ public class Optionbtn : MonoBehaviour
 
     public void SelectOption()
     {
+    //asigna la opcion que el usuario escogio
         LevelManager.Instance.SetPlayerAnswer(OptionID);
+        //se verifica si ya se escogio una respuesta
         LevelManager.Instance.CheckPlayerState();
     }
 }
