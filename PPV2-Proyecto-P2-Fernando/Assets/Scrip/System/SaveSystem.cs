@@ -9,6 +9,8 @@ public class SaveSystem : MonoBehaviour
     // objeto para patron singleto
     public static SaveSystem Instance;
 
+    public Leccion data;
+    public SubjectContainer subject;
     //()PATRON SINGLETO ES UN PATRON DE DISEÑO, ENCARGADO DE CREAR UNA INSTANCIA DE LA CLASE 
     //PARA SER REFERENCIA DA EN OTRA CLASE SIN LA NECESIDAD DE DECLARAR LAS VARIABLES
     //Osea que que hace que sea referenciado el objeto en lugar de crear otro en otros scrips
@@ -28,10 +30,15 @@ public class SaveSystem : MonoBehaviour
     //lo que se activa al iniciar el juego
     private void Start()
     {
+        /*
         //creamos el archivo 
         CreateFile("Posicion",".txt");
         //buscamos el archivo y lo mostramos en consola
-        Debug.Log(ReadFile("Posicion", ".txt"));
+        Debug.Log(ReadFile("Posicion", ".txt"));*/
+
+        //SaveToJSON("LeccionDummy", data);
+
+        subject = LoadFromJSON<SubjectContainer>("LeccionJson");
     }
 
     //Clase que crea el archivo
@@ -111,4 +118,24 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
+    public T LoadFromJSON<T>(string _fileName) where T: new()
+    {
+        T Dato = new T();
+        string path = Application.dataPath + "/Resources/JSONS/" + _fileName + ".json";
+        string JSONSData = "";
+        if (File.Exists(path))
+        {
+            JSONSData = File.ReadAllText(path);
+            Debug.Log("JSON STRING: " + JSONSData);
+        }
+        if (JSONSData.Length != 0)
+        {
+            JsonUtility.FromJsonOverwrite(JSONSData, Dato);
+        }
+        else
+        {
+            Debug.LogWarning("ERROR - FileSystem: JSONData is empty, check for local variable [string JSONData]");
+        }
+        return Dato;
+    }
 }
