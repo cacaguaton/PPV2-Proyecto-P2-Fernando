@@ -9,23 +9,28 @@ public class SaveSystem : MonoBehaviour
     // objeto para patron singleto
     public static SaveSystem Instance;
 
-    //()PATRON SINGLETO ES UN PATRON DE DISE�O, ENCARGADO DE CREAR UNA INSTANCIA DE LA CLASE 
+    //()PATRON SINGLETO ES UN PATRON DE DISEÑO, ENCARGADO DE CREAR UNA INSTANCIA DE LA CLASE 
     //PARA SER REFERENCIA DA EN OTRA CLASE SIN LA NECESIDAD DE DECLARAR LAS VARIABLES
     //Osea que que hace que sea referenciado el objeto en lugar de crear otro en otros scrips
     private void Awake()
     {
+    // si está asignad lo deja así
         if (Instance != null)
         {
             return;
         }
+        //pero si no esta asignado lo asigna 
         else
         {
             Instance = this;
         }
     }
+    //lo que se activa al iniciar el juego
     private void Start()
     {
+        //creamos el archivo 
         CreateFile("Posicion",".txt");
+        //buscamos el archivo y lo mostramos en consola
         Debug.Log(ReadFile("Posicion", ".txt"));
     }
 
@@ -38,7 +43,9 @@ public class SaveSystem : MonoBehaviour
         if (!File.Exists(path))
         {
             //3.- Creamos contenido
+            //escribe la fecha
             string content = "login Date: " + System.DateTime.Now + "\n";
+            //escribe la posision 
             string position = "x: " + gameObject.transform.position.x + 
                 ", y: " + gameObject.transform.position.y;
             //4.- Almacenamos la informacion
@@ -51,7 +58,7 @@ public class SaveSystem : MonoBehaviour
                 "[  " + _name + _extension + "], verifica tu informacion");
         }
     }
-
+    //Esta lee el archivo
     public string ReadFile(string _fileName, string _extension)
     {
         //1.- Acceder al path del archivo
@@ -60,33 +67,46 @@ public class SaveSystem : MonoBehaviour
         string data = "";
         if (File.Exists(path)) 
         {
+        //asigna la informacion dentro del archivo a la variable data
             data = File.ReadAllText(path);
         }
+        //regresa data ya con la información 
         return data;
         
     }
-
+    //Este convierte de un fichero a un archivo JSON
     public void SaveToJSON(string _fileName, object _data)
     {
+    //si el onbjeto no tiene información 
         if (_data != null)
         {
+            //convierte el string a tipo JSON, ponemos verdadero para facilitar su lectura
             string JSONData = JsonUtility.ToJson(_data, true);
-            
+            //si los nuenros de la cadena son diferentes a 0
             if(JSONData.Length != 0)
             {
+                //imprime en consola
                 Debug.Log("JSON STRING: " + JSONData);
+                //Le asigna nombre al JSON
                 string fileName = _fileName + ".json";
+                //busca el archivo original 
                 string filePath = Path.Combine(Application.dataPath + "/Resources/JSONS/", fileName);
+                //Sobre escribe en el archivo original 
                 File.WriteAllText(filePath, JSONData);
+                //dice donde se almaceno
                 Debug.Log("JSON almacenado en la direccion: " + filePath);
             }
+            //si la cadena es 0
             else 
             {
+            //manda esta advertencia 
                 Debug.LogWarning("ERROR - FileSystem: JSONData is empty, check for local variable [string JSONData]");
             }
         }
+        //si ya tiene informacion
         else
         {
+            // manda una advertencia 
             Debug.LogWarning("ERROR - FileSystem: _data is null, check for param [object _data]");
         }
     }
