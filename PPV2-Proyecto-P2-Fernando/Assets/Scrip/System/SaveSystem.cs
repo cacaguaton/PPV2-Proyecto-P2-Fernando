@@ -26,6 +26,7 @@ public class SaveSystem : MonoBehaviour
         {
             Instance = this;
         }
+        subject = LoadFromJSON<SubjectContainer>(PlayerPrefs.GetString("SelectedLesson"));
     }
     //lo que se activa al iniciar el juego
     private void Start()
@@ -38,7 +39,7 @@ public class SaveSystem : MonoBehaviour
 
         //SaveToJSON("LeccionDummy", data);
 
-        subject = LoadFromJSON<SubjectContainer>("LeccionJson");
+        
     }
 
     //Clase que crea el archivo

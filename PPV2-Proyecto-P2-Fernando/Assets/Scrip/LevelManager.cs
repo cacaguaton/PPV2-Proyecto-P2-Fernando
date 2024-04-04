@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
 {//iNSTANCIA DE LA CLASE 
     public static LevelManager Instance;
     [Header("Level Data")]
-    public Subject Lesson;
+    public SubjectContainer subject;
 
     [Header("User Interface")]
     public TMP_Text QuestionTxt;
@@ -44,13 +44,15 @@ public class LevelManager : MonoBehaviour
         {
             Instance = this;
         }
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        subject = SaveSystem.Instance.subject;
         //Establecemos la cantidad de preguntas en la leccin
-        questionAmount = Lesson.leccionList.Count;
+        questionAmount = subject.leccionList.Count;
         //Carga la primera pregunta 
         LoadQuestion();
         // Check player input
@@ -63,7 +65,7 @@ public class LevelManager : MonoBehaviour
         if(currentQuestion < questionAmount)
         {
             // Establecemos la leccion actual
-            currentLesson = Lesson.leccionList[currentQuestion];
+            currentLesson = subject.leccionList[currentQuestion];
             //Establecemos la pregunta
             question = currentLesson.lessons;
             //Establecemos la respuesta correcta

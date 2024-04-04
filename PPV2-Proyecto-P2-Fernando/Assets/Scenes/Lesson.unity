@@ -962,7 +962,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1602d6450e8fbf94caf2a850f79c9611, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Lesson: {fileID: 11400000, guid: 075a7385e96d3b1499d64783a81b62bd, type: 2}
+  subject:
+    Lesson: 0
+    leccionList: []
   QuestionTxt: {fileID: 2016413734}
   livesTXt: {fileID: 1780661456}
   Options:
@@ -1383,7 +1385,7 @@ GameObject:
   - component: {fileID: 1200423716}
   - component: {fileID: 1200423715}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SaveSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1401,6 +1403,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc9f8759919e9904985380b932820e4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+    ID: 0
+    lessons: 
+    options: []
+    correctAnswer: 0
+  subject:
+    Lesson: 0
+    leccionList:
+    - ID: 0
+      lessons: 
+      options: []
+      correctAnswer: 0
 --- !u!4 &1200423716
 Transform:
   m_ObjectHideFlags: 0
@@ -2849,6 +2863,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 741545430}
+  - {fileID: 1200423716}
   - {fileID: 644854834}
   - {fileID: 319370237}
-  - {fileID: 1200423716}
