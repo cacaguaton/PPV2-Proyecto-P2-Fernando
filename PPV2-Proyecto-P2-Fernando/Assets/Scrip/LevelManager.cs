@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {//iNSTANCIA DE LA CLASE 
@@ -30,6 +31,10 @@ public class LevelManager : MonoBehaviour
     [Header("Current Lesson")]
     public Leccion currentLesson;
 
+    public GameObject GaPe;
+    public TMP_Text GaPeTitle;
+
+
 
     //()PATRON SINGLETO ES UN PATRON DE DISEÑO, ENCARGADO DE CREAR UNA INSTANCIA DE LA CLASE 
     //PARA SER REFERENCIA DA EN OTRA CLASE SIN LA NECESIDAD DE DECLARAR LAS VARIABLES
@@ -44,7 +49,7 @@ public class LevelManager : MonoBehaviour
         {
             Instance = this;
         }
-        
+
     }
 
     // Start is called before the first frame update
@@ -62,7 +67,7 @@ public class LevelManager : MonoBehaviour
     private void LoadQuestion()
     {
         // Aseguramos que la pregunta actual este dentro de los limites
-        if(currentQuestion < questionAmount)
+        if (currentQuestion < questionAmount)
         {
             // Establecemos la leccion actual
             currentLesson = subject.leccionList[currentQuestion];
@@ -73,7 +78,7 @@ public class LevelManager : MonoBehaviour
             //Establecemos la pregunta en UI
             QuestionTxt.text = question;
             // Establecemos las opciones
-            for (int i = 0; i < currentLesson.options.Count; i++) 
+            for (int i = 0; i < currentLesson.options.Count; i++)
             {
                 Options[i].GetComponent<Optionbtn>().OptionName = currentLesson.options[i];
                 Options[i].GetComponent<Optionbtn>().OptionID = i;
@@ -82,12 +87,14 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
+
             // Si llegamos al final de las preguntas
             Debug.Log("Fin de las preguntas");
+            SceneManager.LoadScene("Main");
         }
     }
 
-public void NextQuestion()
+    public void NextQuestion()
     {
         if (CheckPlayerState())
         {
@@ -96,10 +103,12 @@ public void NextQuestion()
 
             AnswerContainer.SetActive(true);
 
-            if(isCorrect)
+            if (isCorrect)
             {
                 AnswerContainer.GetComponent<Image>().color = Green;
                 Debug.Log("Respuesta correcta.  " + question + ": " + correctAnswer);
+                //Incrementamos el indice de la pregunta actual
+                currentQuestion++;
             }
             else
             {
@@ -111,14 +120,21 @@ public void NextQuestion()
             //Actualizamos el contador de vida
             livesTXt.text = lives.ToString();
 
-            //Incrementamos el indice de la pregunta actual
-            currentQuestion++;
+
 
             //Mostramos el resultado durante un tiempo (puedes usar una corutine o invoke)
             StartCoroutine(ShowResultAndLOadQuestion(isCorrect));
 
             //Reset answer from player
             answerFromPlayer = 9;
+
+            if (lives == 0)
+            {
+                GaPe.SetActive(true);
+                GaPe.GetComponent<Image>().color = Red;
+                Debug.Log("Respuesta Incorrecta.  " + question + ": " + correctAnswer);
+                StartCoroutine(GaPeM(true));
+            }
         }
         else
         {
@@ -148,7 +164,7 @@ public void NextQuestion()
 
     public bool CheckPlayerState()
     {
-        if(answerFromPlayer != 9)
+        if (answerFromPlayer != 9)
         {
             CheckButton.GetComponent<Button>().interactable = true;
             CheckButton.GetComponent<Image>().color = Color.white;
@@ -161,4 +177,14 @@ public void NextQuestion()
             return false;
         }
     }
+
+    private IEnumerator GaPeM(bool isCorrect)
+    {
+        yield return new WaitForSeconds(2.5f);
+
+        SceneManager.LoadScene("Main");
+        GaPeTitle.text = "Leccion no completada";
+
+    }
 }
+

@@ -1,0 +1,35 @@
+{
+  "Lesson": 1,
+  "leccionList": [
+    {
+      "ID": 1,
+      "lessons": "¿Cuál es el lenguaje de programación principal utilizado en Unity?",
+      "options": ["C#", "Java", "Python", "JavaScript", "C++"],
+      "correctAnswer": 0
+    },
+    {
+      "ID": 2,
+      "lessons": "¿Qué es un GameObject en Unity?",
+      "options": ["Una clase estática", "Un tipo de dato", "Una entidad en la escena", "Un componente gráfico", "Un archivo de configuración"],
+      "correctAnswer": 2
+    },
+    {
+      "ID": 3,
+      "lessons": "¿Qué es Unity?",
+      "options": ["Un motor de juego", "Un lenguaje de programación", "Un editor de texto", "Una compañía de videojuegos", "Un sistema operativo"],
+      "correctAnswer": 0
+    },
+    {
+      "ID": 4,
+      "lessons": "¿Qué es un script en Unity?",
+      "options": ["Una imagen", "Un documento de texto", "Un componente de Unity", "Un programa en C#", "Un modelo 3D"],
+      "correctAnswer": 3
+    },
+    {
+      "ID": 5,
+      "lessons": "¿Qué función cumple el componente Rigidbody en Unity?",
+      "options": ["Controlar la cámara", "Detectar colisiones", "Controlar el movimiento físico", "Reproducir sonidos", "Crear animaciones"],
+      "correctAnswer": 2
+    }
+  ]
+}
