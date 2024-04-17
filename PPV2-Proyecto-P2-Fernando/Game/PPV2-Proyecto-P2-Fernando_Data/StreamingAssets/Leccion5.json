@@ -1,0 +1,65 @@
+{
+  "Lesson": 1,
+  "leccionList": [
+    {
+      "ID": 1,
+      "lessons": "¿Qué es Unity principalmente utilizado para desarrollar?",
+      "options": [
+        "Aplicaciones de escritorio",
+        "Sitios web",
+        "Juegos y experiencias de realidad virtual/aumentada",
+        "Sistemas operativos",
+        "Bases de datos"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "ID": 2,
+      "lessons": "¿Qué lenguaje de programación se utiliza primordialmente en Unity para el desarrollo de juegos?",
+      "options": [
+        "JavaScript",
+        "C#",
+        "Python",
+        "Java",
+        "C++"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "ID": 3,
+      "lessons": "¿Cómo se llama el proceso de ajustar los valores de las propiedades de los objetos en el juego para mejorar la jugabilidad en Unity?",
+      "options": [
+        "Debugging",
+        "Playtesting",
+        "Refactoring",
+        "Tweaking",
+        "Balancing"
+      ],
+      "correctAnswer": 4
+    },
+    {
+      "ID": 4,
+      "lessons": "En Unity, ¿qué componente se utiliza para aplicar fuerzas físicas como la gravedad o colisiones a un objeto?",
+      "options": [
+        "Mesh Filter",
+        "Rigidbody",
+        "Collider",
+        "Script",
+        "Animator"
+      ],
+      "correctAnswer": 1
+    },
+    {
+      "ID": 5,
+      "lessons": "¿Qué elemento de Unity permite definir y controlar las secuencias de animación para los personajes y objetos?",
+      "options": [
+        "Animation Clip",
+        "Animator Controller",
+        "Transform",
+        "Rigidbody",
+        "Sprite Renderer"
+      ],
+      "correctAnswer": 1
+    }
+  ]
+}

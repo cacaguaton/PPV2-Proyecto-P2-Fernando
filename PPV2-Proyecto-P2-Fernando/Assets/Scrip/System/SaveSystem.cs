@@ -70,7 +70,7 @@ public class SaveSystem : MonoBehaviour
     public string ReadFile(string _fileName, string _extension)
     {
         //1.- Acceder al path del archivo
-        string path = Application.dataPath + "/Resources/" + _fileName + _extension;
+        string path = Application.dataPath + "/StreamingAssets/" + _fileName + _extension;
         // 2.- Si el archivo existe, dame su info
         string data = "";
         if (File.Exists(path)) 
@@ -98,7 +98,7 @@ public class SaveSystem : MonoBehaviour
                 //Le asigna nombre al JSON
                 string fileName = _fileName + ".json";
                 //busca el archivo original 
-                string filePath = Path.Combine(Application.dataPath + "/Resources/JSONS/", fileName);
+                string filePath = Path.Combine(Application.dataPath + "/StreamingAssets/", fileName);
                 //Sobre escribe en el archivo original 
                 File.WriteAllText(filePath, JSONData);
                 //dice donde se almaceno
@@ -122,7 +122,7 @@ public class SaveSystem : MonoBehaviour
     public T LoadFromJSON<T>(string _fileName) where T: new()
     {
         T Dato = new T();
-        string path = Application.dataPath + "/Resources/JSONS/" + _fileName + ".json";
+        string path = Application.dataPath + "/StreamingAssets/" + _fileName + ".json";
         string JSONSData = "";
         if (File.Exists(path))
         {

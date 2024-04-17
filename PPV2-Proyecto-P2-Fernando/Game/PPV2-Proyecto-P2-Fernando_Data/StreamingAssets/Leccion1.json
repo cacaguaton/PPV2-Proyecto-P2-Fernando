@@ -1,0 +1,65 @@
+{
+  "Lesson": 0,
+  "leccionList": [
+    {
+      "ID": 1,
+      "lessons": "¿Cuál es el componente principal para el manejo de la física en Unity?",
+      "options": [
+        "Rigidbody",
+        "Transform",
+        "Collider",
+        "Script",
+        "Renderer"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "ID": 2,
+      "lessons": "¿Qué lenguaje de programación se utiliza principalmente para escribir scripts en Unity?",
+      "options": [
+        "Java",
+        "C++",
+        "C#",
+        "Python",
+        "JavaScript"
+      ],
+      "correctAnswer": 2
+    },
+    {
+      "ID": 3,
+      "lessons": "¿Qué función se utiliza para hacer que un objeto se mueva hacia una posición específica en Unity?",
+      "options": [
+        "MoveTo()",
+        "Lerp()",
+        "Translate()",
+        "MoveTowards()",
+        "SetPosition()"
+      ],
+      "correctAnswer": 3
+    },
+    {
+      "ID": 4,
+      "lessons": "¿Cuál es el objeto principal que actúa como contenedor para todos los elementos en una escena de Unity?",
+      "options": [
+        "GameObject",
+        "Component",
+        "Asset",
+        "Prefab",
+        "Scene"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "ID": 5,
+      "lessons": "¿Cuál es el componente que se utiliza para renderizar gráficos en Unity?",
+      "options": [
+        "Renderer",
+        "MeshFilter",
+        "Canvas",
+        "Camera",
+        "Light"
+      ],
+      "correctAnswer": 0
+    }
+  ]
+}

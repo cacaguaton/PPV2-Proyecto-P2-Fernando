@@ -1,0 +1,35 @@
+{
+ "Lesson": 1,
+  "leccionList": [
+    {
+      "ID": 1,
+      "lessons": "¿Cuál es el lenguaje de programación principal utilizado en Unity?",
+      "options": ["C#", "Java", "Python", "JavaScript", "Swift"],
+      "correctAnswer": 0
+    },
+    {
+      "ID": 2,
+      "lessons": "¿Qué componente de Unity se utiliza para detectar colisiones entre objetos?",
+      "options": ["Rigidbody", "Collider", "Renderer", "Transform", "AudioSource"],
+      "correctAnswer": 1
+    },
+    {
+      "ID": 3,
+      "lessons": "¿Cuál es la función de FixedUpdate() en Unity?",
+      "options": ["Actualizar la interfaz de usuario", "Ejecutar código antes de cada fotograma", "Actualizar físicas", "Manejar eventos de entrada", "Reproducir sonidos"],
+      "correctAnswer": 2
+    },
+    {
+      "ID": 4,
+      "lessons": "¿Qué se utiliza para representar gráficos en 3D en Unity?",
+      "options": ["Sprites", "Texturas", "Modelos 3D", "Shaders", "Materiales"],
+      "correctAnswer": 2
+    },
+    {
+      "ID": 5,
+      "lessons": "¿Cuál es el término que se utiliza en Unity para referirse a un conjunto de objetos que comparten características similares?",
+      "options": ["Grupo", "Colección", "Familia", "Prefab", "Array"],
+      "correctAnswer": 3
+    }
+  ]
+}
