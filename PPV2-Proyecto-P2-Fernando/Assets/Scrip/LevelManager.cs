@@ -33,6 +33,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject GaPe;
     public TMP_Text GaPeTitle;
+    public TMP_Text CorrctoOIn;
 
 
 
@@ -87,10 +88,15 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-
             // Si llegamos al final de las preguntas
+
+            GaPe.SetActive(true);
+            GaPe.GetComponent<Image>().color = Green;
+            GaPeTitle.text = "Leccion Completada";
+            StartCoroutine(GaPeM(true));
+
+            
             Debug.Log("Fin de las preguntas");
-            SceneManager.LoadScene("Main");
         }
     }
 
@@ -106,14 +112,14 @@ public class LevelManager : MonoBehaviour
             if (isCorrect)
             {
                 AnswerContainer.GetComponent<Image>().color = Green;
-                Debug.Log("Respuesta correcta.  " + question + ": " + correctAnswer);
+                CorrctoOIn.text = "Respuesta correcta.  \n Bien hecho";
                 //Incrementamos el indice de la pregunta actual
                 currentQuestion++;
             }
             else
             {
                 AnswerContainer.GetComponent<Image>().color = Red;
-                Debug.Log("Respuesta Incorrecta.  " + question + ": " + correctAnswer);
+                CorrctoOIn.text = "Respuesta Incorrecta.  \n Intenta de nuevo";
                 lives--;
             }
 
@@ -132,6 +138,7 @@ public class LevelManager : MonoBehaviour
             {
                 GaPe.SetActive(true);
                 GaPe.GetComponent<Image>().color = Red;
+                GaPeTitle.text = "Leccion no completada";
                 Debug.Log("Respuesta Incorrecta.  " + question + ": " + correctAnswer);
                 StartCoroutine(GaPeM(true));
             }
@@ -180,10 +187,11 @@ public class LevelManager : MonoBehaviour
 
     private IEnumerator GaPeM(bool isCorrect)
     {
+        
         yield return new WaitForSeconds(2.5f);
 
         SceneManager.LoadScene("Main");
-        GaPeTitle.text = "Leccion no completada";
+        
 
     }
 }

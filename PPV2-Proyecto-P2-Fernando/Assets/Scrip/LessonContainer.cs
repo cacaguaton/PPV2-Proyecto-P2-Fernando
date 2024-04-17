@@ -23,6 +23,9 @@ public class LessonContainer : MonoBehaviour
     public ScriptableObject lesson;
     public string LessonName;
 
+    [Header("Creditos")]
+    public GameObject Creditos;
+
 
 
     // Start is called before the first frame update
@@ -67,6 +70,25 @@ public class LessonContainer : MonoBehaviour
             lessonContainer.SetActive(true);
             MainScript.instance.SetSelectedLesson(LessonName);
         }
+    }
+    public void ActivacionCreditos()
+    {
+
+        if(Creditos.activeSelf)
+        {
+            // Desactiva el objeto si está activo
+            Creditos.SetActive(false);
+        }
+        else
+        {
+            // Activa el objeto si está desactivado
+            Creditos.SetActive(true);
+        }
+    }
+
+    public void Exit()
+    {
+        Application.Quit();
     }
 
 }
